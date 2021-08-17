@@ -1,0 +1,12 @@
+iapiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: send-slack-webhook
+spec:
+  params:
+  - name: webhook-secret
+    value: webhook-secret
+  - name: message
+    value: "This is your Tekton Webhook for slack message"
+  taskRef:
+    name: send-to-webhook-slack
